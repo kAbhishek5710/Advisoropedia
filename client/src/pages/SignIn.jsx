@@ -64,7 +64,7 @@ export default function SignIn() {
           onChange={handleChange}
         />
         <button className="bg-slate-700 text-white p-3 rounded-lg hover:opacity-90">
-          Sign In
+          {loading ? "Loading..." : "Sign In"}
         </button>
       </form>
       <div className="flex mt-4 gap-2">

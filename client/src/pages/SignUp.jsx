@@ -34,7 +34,7 @@ export default function SignUp() {
       navigate("/sign-in");
     } catch (err) {
       setLoading(false);
-      setError(error.message);
+      setError(err.message);
     }
   };
   return (
@@ -65,7 +65,7 @@ export default function SignUp() {
           onChange={handleChange}
         />
         <button className="bg-slate-700 text-white p-3 rounded-lg hover:opacity-90">
-          Sign Up
+          {loading ? "Loading..." : "Sign Up"}
         </button>
       </form>
       <div className="flex mt-4 gap-2">
@@ -74,6 +74,7 @@ export default function SignUp() {
           <span className="text-blue-700">Sign In</span>
         </Link>
       </div>
+      {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>
   );
 }

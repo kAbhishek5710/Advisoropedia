@@ -1,35 +1,29 @@
 import React from "react";
-import Card1 from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
 
 export default function Card({ key, name, image, char, ingredients }) {
   return (
-    <Card1 className="border rounded-lg shadow-black" sx={{ maxWidth: 500, maxHeight:1500 }}>
-      <CardHeader className="text-center bg-slate-400" title={name} />
-      <CardMedia
-        
-        component="img"
-        height="200"
-        image={
-          image
-            ? image
-            : "http://2.bp.blogspot.com/_LYnjZQ_c4yo/TQog-hpyLEI/AAAAAAAAAD8/Wp8Y0_YovOA/s1600/IMG_0194.JPG"
-        }
-        alt="Paella dish"
-      />
-      <CardContent className="bg-slate-400 ">
-        <Typography variant="body2" color="text.secondary">
+    <div className="flex flex-col justify-center items-center border rounded-lg max-h-auto border-grey p-1 shadow-black">
+      <div className="text-center w-full rounded-lg p-3 bg-slate-400">{name}</div>
+      <div>
+        <img className="py-1"
+          src={
+            image
+              ? image
+              : "http://2.bp.blogspot.com/_LYnjZQ_c4yo/TQog-hpyLEI/AAAAAAAAAD8/Wp8Y0_YovOA/s1600/IMG_0194.JPG"
+          }
+          alt="potion"
+        />
+      </div>
+      <div className="flex flex-col bg-slate-300 w-full rounded-lg p-2">
+        <div>
           <b>Characteristics : </b>
           <span className="font-lg">{char ? char : name}</span>
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
+        </div>
+        <div>
           <b>Ingredients : </b>
           <span className="font-lg m-1">{ingredients}</span>
-        </Typography>
-      </CardContent>
-    </Card1>
+        </div>
+      </div>
+    </div>
   );
 }

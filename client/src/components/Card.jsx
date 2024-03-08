@@ -7,12 +7,12 @@ import Typography from "@mui/material/Typography";
 
 export default function Card({ key, name, image, char, ingredients }) {
   return (
-    <Card1 sx={{ maxWidth: 345, maxHeight: 490 }}>
-      <CardHeader className="text-center" title={name} />
+    <Card1 className="border rounded-lg shadow-black" sx={{ maxWidth: 500, maxHeight:1500 }}>
+      <CardHeader className="text-center bg-slate-400" title={name} />
       <CardMedia
-        className="w-full h-auto"
+        
         component="img"
-        height="100"
+        height="200"
         image={
           image
             ? image
@@ -20,14 +20,14 @@ export default function Card({ key, name, image, char, ingredients }) {
         }
         alt="Paella dish"
       />
-      <CardContent>
+      <CardContent className="bg-slate-400 ">
         <Typography variant="body2" color="text.secondary">
           <b>Characteristics : </b>
           <span className="font-lg">{char ? char : name}</span>
         </Typography>
         <Typography variant="body2" color="text.secondary">
           <b>Ingredients : </b>
-          <span className="font-lg">{ingredients}</span>
+          <span className="font-lg m-1">{ingredients}</span>
         </Typography>
       </CardContent>
     </Card1>
